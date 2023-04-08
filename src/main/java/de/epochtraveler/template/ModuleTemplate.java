@@ -1,12 +1,13 @@
 package de.epochtraveler.template;
 
 import de.epochtraveler.epochapi.CoreServer;
+import de.epochtraveler.epochapi.logging.Logger;
 import de.epochtraveler.epochapi.modules.Module;
 import de.epochtraveler.epochapi.modules.ModuleDescription;
 
 @ModuleDescription(
         name = "Template Module",
-        version = "1.0.0"
+        version = "1.0.1"
 )
 public final class ModuleTemplate extends Module {
 
@@ -16,11 +17,11 @@ public final class ModuleTemplate extends Module {
 
     @Override
     public void enable() {
-        System.out.println("Module loaded!");
+        getModuleLogger().info("§aStarted " + getModuleDescription().name() + " Module!");
     }
 
     @Override
     public void disable() {
-        System.out.println("Module disabled!");
+        getModuleLogger().info("§cStopped " + getModuleDescription().name() + " Module!");
     }
 }

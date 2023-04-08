@@ -1,4 +1,0 @@
-name: Template
-version: '${project.version}'
-main: de.epochtraveler.template.Template
-api-version: 1.19
