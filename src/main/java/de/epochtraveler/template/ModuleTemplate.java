@@ -1,13 +1,15 @@
 package de.epochtraveler.template;
 
+import de.epochtraveler.epochapi.Core;
 import de.epochtraveler.epochapi.CoreServer;
 import de.epochtraveler.epochapi.modules.Module;
 import de.epochtraveler.epochapi.modules.ModuleDescription;
+import de.epochtraveler.template.commands.ExampleCommand;
 import de.epochtraveler.template.events.TemplateEvent;
 
 @ModuleDescription(
         name = "Template Module",
-        version = "1.1.0"
+        version = "1.2.0"
 )
 public final class ModuleTemplate extends Module {
 
@@ -19,6 +21,7 @@ public final class ModuleTemplate extends Module {
     public void enable() {
         getModuleLogger().info("§aStarted " + getModuleDescription().name() + " Module!");
         new TemplateEvent();
+        Core.registerCommand(new ExampleCommand());
     }
 
     @Override
